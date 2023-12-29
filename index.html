@@ -1,9 +1,312 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Katrina's Website</title>
-  </head>
-  <body>
-    <h1>Welcome to my website!</h1>
-  </body>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+
+
+
+    <style>
+        /* Additional styles for the portfolio section */
+        #portfolio .portfolio-single-item {
+            margin-bottom: 20px;
+        }
+
+        #portfolio .portfolio-item-details {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #portfolio .portfolio-item-details li {
+            margin-bottom: 5px;
+        }
+
+        #portfolio .portfolio-item-details strong {
+            color: #3273dc;
+        }
+    </style>
+
+    <title>katrventura</title>
+</head>
+
+<body>
+
+
+    <section class="hero is-fullheight is-bold is-light">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-one-third">
+                        <div class="language-container">
+                            <p>
+                                <a href="#" class="language-link-disabled">Filipino</a> |
+                                <a href="#" class="language-link">English</a>
+                            </p>
+                        </div>
+                        <h1 class="title is-size-1">Katrina Ventura</h1>
+                        <p class="subtitle is-size-4">Data Journalist</p>
+                        <div class="buttons">
+                            <!-- Added the smooth-scroll class here -->
+                            <a href="#portfolio" class="button is-dark is-active">Featured Work</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section is-medium">
+        <div class="container">
+
+            <h1 class="title is-size-2">Featured Work</h1>
+            <p>Click on thumbnails for a summary of the project. Click on project links to go to the project page.</p>
+            <div class="portfolio-clear"></div>
+
+            <div id="portfolio-container" class="columns is-multiline">
+                <!-- Tags -->
+
+                <ul id="portfolio-filter" class="column is-12">
+                    <div class="block">
+                        <li class="portfolio-active-cat">
+                            <a href="#" class="All" data-value="All" onclick="filterItems('All')">All</a> |
+                            <a href="#" class="Maps" data-value="1" onclick="filterItems('Maps')">Maps</a> |
+                            <a href="#" class="Dataviz" data-value="2" onclick="filterItems('Graphs')">DataViz</a>
+                        </li>
+                    </div>
+                </ul>
+
+                <!-- Featured Work Items -->
+
+                <section id="featured works" class="section">
+                    <div class="columns is-multiline content">
+
+
+                        <!-- Item 1 -->
+                        <div class="column is-one-third Graphs">
+                            <!-- Add content for Item 2 here -->
+                            <div class="block">
+                                
+                                <iframe title="Two Sides to the Pumpkin Spice Story" aria-label="Interactive line chart" src="https://datawrapper.dwcdn.net/TQ7xU/4/" scrolling="no" frameborder="0" style="width:100%; border: none;" height="400" data-external="1"></iframe>
+
+                                <div class="tags">
+                                    <span class="tag is-rounded is-light">DataViz</span>
+                                </div>
+
+                        
+                            </div>
+                            <!-- Description and links-->
+                            <div class="block">
+                                <p><strong>Project Description:</strong> For twenty years, pumpkin spice-flavored items have signaled the unofficial start to autumn and in 2023 it has ballooned into a $802.5 million industry. But with unit sales down for a second straight year, what is really driving up dollar sales?
+                                </p>
+                                <a target="_blank" href="https://medium.com/@katrventura/20-years-later-pumpkin-spice-sales-reach-800-million-but-its-not-because-consumers-buy-more-68394cf4f65a" button class="button is-dark">Read</a>
+                                
+                            
+                                
+                                
+                                
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="column is-one-third">
+                            <!-- Add content for Item 2 here -->
+                            <div class="block">
+                                <h3>Biden's Judicial Nominees</h3>
+                                <a class="colorbox cboxElement" title="Biden's Judicial Nominees Summary"
+                                    href="https://example.com/bidens_judicial_nominees.png">
+                                    <div class="adipoli-wrapper img-link-initial"
+                                        style="width:230px; height:164.281px;">
+                                        <img alt="" class="img-link-initial"
+                                            src="https://example.com/bidens_judicial_nominees.png"
+                                            style="display: none;">
+                                        <div class="adipoli-before img-link-initial"
+                                            style="width: 200px; height: 142.852px;">
+                                            <img src="https://example.com/bidens_judicial_nominees.png">
+                                        </div>
+                                        <div class="adipoli-after img-link-initial"
+                                            style="width: 200px; height: 142.852px; display: none;"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Description and links-->
+                            <div class="block">
+                                <p><strong>Project Description:</strong> Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Proin scelerisque felis a orci aliquet, nec gravida elit blandit.
+                                </p>
+                                <p><strong>Organization:</strong> Spice Investigative Foundation</p>
+                                <p><strong>Date:</strong> 12/15/2023</p>
+                                <p><a target="_blank" href="#">Project Link</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="column is-one-third">
+                            <!-- Title and Image -->
+                            <div class="block">
+                                <h3>Presidential Campaign Funds</h3>
+                                <a class="colorbox cboxElement" title="Biden's Judicial Nominees Summary"
+                                    href="https://example.com/bidens_judicial_nominees.png">
+                                    <div class="adipoli-wrapper img-link-initial"
+                                        style="width:230px; height:164.281px;">
+                                        <img alt="" class="img-link-initial"
+                                            src="https://example.com/bidens_judicial_nominees.png"
+                                            style="display: none;">
+                                        <div class="adipoli-before img-link-initial"
+                                            style="width: 200px; height: 142.852px;">
+                                            <img src="https://example.com/bidens_judicial_nominees.png">
+                                        </div>
+                                        <div class="adipoli-after img-link-initial"
+                                            style="width: 200px; height: 142.852px; display: none;"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Description and links-->
+                            <div class="block">
+                                <p><strong>Project Description:</strong> Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Proin scelerisque felis a orci aliquet, nec gravida elit blandit.
+                                </p>
+                                <p><strong>Organization:</strong> Spice Investigative Foundation</p>
+                                <p><strong>Date:</strong> 12/15/2023</p>
+                                <p><a target="_blank" href="#">Project Link</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="column is-one-third">
+                            <!-- Title and Image -->
+                            <div class="block">
+                                <h3>Title</h3>
+                                <a class="colorbox cboxElement" title="Biden's Judicial Nominees Summary"
+                                    href="https://example.com/bidens_judicial_nominees.png">
+                                    <div class="adipoli-wrapper img-link-initial"
+                                        style="width:230px; height:164.281px;">
+                                        <img alt="" class="img-link-initial"
+                                            src="https://example.com/bidens_judicial_nominees.png"
+                                            style="display: none;">
+                                        <div class="adipoli-before img-link-initial"
+                                            style="width: 200px; height: 142.852px;">
+                                            <img src="https://example.com/bidens_judicial_nominees.png">
+                                        </div>
+                                        <div class="adipoli-after img-link-initial"
+                                            style="width: 200px; height: 142.852px; display: none;"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Description and links-->
+                            <div class="block">
+                                <p><strong>Project Description:</strong> Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Proin scelerisque felis a orci aliquet, nec gravida elit blandit.
+                                </p>
+                                <p><strong>Organization:</strong> Spice Investigative Foundation</p>
+                                <p><strong>Date:</strong> 12/15/2023</p>
+                                <p><a target="_blank" href="#">Project Link</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div class="column is-one-third">
+                            <!-- Title and Image -->
+                            <div class="block">
+                                <h3>Title</h3>
+                                <a class="colorbox cboxElement" title="Biden's Judicial Nominees Summary"
+                                    href="https://example.com/bidens_judicial_nominees.png">
+                                    <div class="adipoli-wrapper img-link-initial"
+                                        style="width:230px; height:164.281px;">
+                                        <img alt="" class="img-link-initial"
+                                            src="https://example.com/bidens_judicial_nominees.png"
+                                            style="display: none;">
+                                        <div class="adipoli-before img-link-initial"
+                                            style="width: 200px; height: 142.852px;">
+                                            <img src="https://example.com/bidens_judicial_nominees.png">
+                                        </div>
+                                        <div class="adipoli-after img-link-initial"
+                                            style="width: 200px; height: 142.852px; display: none;"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Description and links-->
+                            <div class="block">
+                                <p><strong>Project Description:</strong> Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Proin scelerisque felis a orci aliquet, nec gravida elit blandit.
+                                </p>
+                                <p><strong>Organization:</strong> Spice Investigative Foundation</p>
+                                <p><strong>Date:</strong> 12/15/2023</p>
+                                <p><a target="_blank" href="#">Project Link</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Item 6 -->
+                        <div class="column is-one-third">
+                            <!-- Title and Image -->
+                            <div class="block">
+                                <h3>Title</h3>
+                                <a class="colorbox cboxElement" title="Biden's Judicial Nominees Summary"
+                                    href="https://example.com/bidens_judicial_nominees.png">
+                                    <div class="adipoli-wrapper img-link-initial"
+                                        style="width:230px; height:164.281px;">
+                                        <img alt="" class="img-link-initial"
+                                            src="https://example.com/bidens_judicial_nominees.png"
+                                            style="display: none;">
+                                        <div class="adipoli-before img-link-initial"
+                                            style="width: 200px; height: 142.852px;">
+                                            <img src="https://example.com/bidens_judicial_nominees.png">
+                                        </div>
+                                        <div class="adipoli-after img-link-initial"
+                                            style="width: 200px; height: 142.852px; display: none;"></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Description and links-->
+                            <div class="block">
+                                <p><strong>Project Description:</strong> Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Proin scelerisque felis a orci aliquet, nec gravida elit blandit.
+                                </p>
+                                <p><strong>Organization:</strong> Spice Investigative Foundation</p>
+                                <p><strong>Date:</strong> 12/15/2023</p>
+                                <p><a target="_blank" href="#">Project Link</a></p>
+                            </div>
+                        </div>
+
+
+                        <script>
+                            function filterItems(tag) {
+                                var items = document.querySelectorAll('.portfolio-single-item');
+                                items.forEach(function (item) {
+                                    if (tag === 'All' || item.classList.contains(tag)) {
+                                        item.style.display = 'block';
+                                    } else {
+                                        item.style.display = 'none';
+                                    }
+                                });
+                            }
+                        </script>
+
+
+
+
+
+
+
+                        <!-- portfolio section closing tags -->
+                    </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+</body>
+
 </html>
