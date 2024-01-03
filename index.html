@@ -5,46 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-
+    <script type="text/javascript" src="scripts.js"></script>
     <title>katrventura</title>
-
-<!-- Smooth Scrolling -->
-    <script>
-        function scrollToSection(sectionId) {
-            var section = document.getElementById(sectionId);
-            if (section) {
-                // Set scroll-behavior to smooth
-                document.body.style.scrollBehavior = 'smooth';
-                section.scrollIntoView({ behavior: 'smooth' });
-                // Reset scroll-behavior to auto after scrolling
-                setTimeout(function() {
-                    document.body.style.scrollBehavior = 'auto';
-                }, 1000); // Adjust the delay as needed
-            }
-        }
-    </script>
-
-<!-- Filter tabs -->
-    <script>
-        function filterItems(tag) {
-            var items = document.querySelectorAll('.columns .portfolio-item');
-    
-            items.forEach(function (item) {
-                if (tag === 'All' || item.classList.contains(tag)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
-
 </head>
-
 <body>
-
 <!-- Introduction Section -->
     <section id="introduction" class="hero is-fullheight is-bold is-light">
         <div class="hero-body">
@@ -59,148 +23,111 @@
                         </div>
                         <h1 class="title is-size-1">Hi, I'm Katrina Ventura!</h1>
                         <p class="subtitle is-size-4">I'm a journalist based in New York and I tell stories with data.</p>
-                        <div class="buttons">
-                            <!-- Added the smooth-scroll class here -->
-                            <a id="seeStoriesButton" href="#portfolio" class="button is-dark is-active">See Stories</a>
-                        </div>
-                  
-                         
+                        <button 
+                          onclick="scrollStories()"
+                          class="button is-dark is-active"
+                        >
+                          See Stories
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-
     <!-- Portfolio Section -->
     <section id="portfolio" class="section">
         <div class="container">
-
             <h1 class="title is-size-2">Portfolio</h1>
-            <p>These are some of my data projects. I worked on it using <strong>Python, BeautifulSoup, Datawrapper, Regex, API,</strong> and <strong>Playwright</strong>. If you have any questions or suggestions for data projects, feel free to connect with me on <a href="https://www.linkedin.com/in/katrventura/">LinkedIn</a>. You can also find the code to my projects on <a href="https://github.com/katrventura">GitHub</a>. </p>
-        
+            <p>
+              These are some of my data projects. I worked on it using <strong>Python, BeautifulSoup, Datawrapper, Regex, API,</strong>
+              and <strong>Playwright</strong>. If you have any questions or suggestions for data projects, feel free to connect 
+              with me on <a href="https://www.linkedin.com/in/katrventura/">LinkedIn</a>. You can also find the code to my projects 
+              on <a href="https://github.com/katrventura">GitHub</a>.
+            </p>
             <div class="tabs">
                 <div class="tabs">
                     <ul>
-                      <li class="tab" onclick="changeTab('All')"><a href="#portfolio" class="All" data-value="All" onclick="filterItems('All')">All</a></li>
-                      <li class="tab" onclick="changeTab('Maps')"><a href="#maps" class="Maps" data-value="Maps" onclick="filterItems('Maps')">Maps</a></li>
-                      <li><a href="#dataviz" class="Dataviz" data-value="Dataviz" onclick="filterItems('Dataviz')">DataViz</a></li>
-                      <li><a href="#scrapers" class="Scrapers" data-value="Scrapers" onclick="filterItems('Scrapers')">Scrapers</a></li>
+                      <li class="tab" onclick="changeTab('All')">
+                        <a href="#portfolio" class="All" onclick="filterItems('All')">All</a>
+                      </li>
+                      <li class="tab" onclick="changeTab('Maps')">
+                        <a href="#maps" class="Maps" onclick="filterItems('Maps')">Maps</a>
+                      </li>
+                      <li>
+                        <a href="#dataviz" class="Dataviz" onclick="filterItems('Dataviz')">DataViz</a>
+                      </li>
+                      <li>
+                        <a href="#scrapers" class="Scrapers" onclick="filterItems('Scrapers')">Scrapers</a>
+                      </li>
                     </ul>
                   </div>
-
               </div>
-            
-             
                     <div class="columns is-multiline content">
-            
-                        
-
-
                         <!-- Item 1 -->
                         <div class="column is-half portfolio-item Dataviz">
                         <section id="dataviz" class="section">
                             <!-- Add content here -->
                             <div class="block">
-                                
-                            
-                                
                                 <iframe title="Two Sides to the Pumpkin Spice Story" aria-label="Interactive line chart" src="https://datawrapper.dwcdn.net/TQ7xU/4/" scrolling="no" frameborder="0" style="width:100%; border: none;" height="400" data-external="1"></iframe>
-
                                 <div class="tags">
                                     <span class="tag is-rounded is-info is-light">DataViz</span>
                                 </div>
-
-                        
                             </div>
                             <!-- Description and links-->
                             <div class="block">
                                 <p><strong>Context:</strong> For twenty years, pumpkin spice-flavored items have signaled the unofficial start to autumn and in 2023 it has ballooned into a $802.5 million industry. But with unit sales down for a second straight year, what is really driving up dollar sales?
                                 </p>
                                 <a target="_blank" href="https://medium.com/@katrventura/20-years-later-pumpkin-spice-sales-reach-800-million-but-its-not-because-consumers-buy-more-68394cf4f65a" button class="button is-dark">Read more</a>
-                            
                             </div>
-
                         </section>
                         </div>
-
                         <!-- Item 2 -->
                         <div class="column is-half portfolio-item Scrapers">
                         <section id="scrapers" class="section">
-
-                    
                             <!-- Add content for Item 2 here -->
                             <div class="block">
-
                                 <div style="min-height:475px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/U7F35/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/U7F35/full.png" alt="" /></noscript></div>
-
                                 <div class="tags">
                                     <span class="tag is-rounded is-warning is-light">Scrapers</span>
                                 </div>
-
                             </div>
-                            
                             <!-- Description and links-->
                             <div class="block">
                                 <p><strong>Context:</strong> Webpage that tracks the campaign finances of candidates running for president in the U.S. elections in 2024. This data is auto-scraped from the Federal Elections Commission API.
                                 </p>
                                 <a target="_blank" href="https://katrventura.github.io/campaign-funds-2024/" button class="button is-dark">Read more</a>
                             </div>
-
                         </section>
                         </div>
-
                         <!-- Item 3 -->
-                    
-                        
                         <div class="column is-half portfolio-item Maps">
-
                             <section id="maps" class="section">
-
-                        
                             <!-- Title and Image -->
                             <div class="block">
-
                                 <h3>Biden's Judicial Nominees</h3>
-
                                 <iframe title="Judicial Nominees Map" aria-label="Interactive map" src="https://katrventura.github.io/judicial-nominees-website/" scrolling="no" frameborder="0" style="width:100%; border: none;" height="400"></iframe>
-        
-
                                   <div class="tags">
                                     <span class="tag is-rounded is-success is-light">Maps</span>
                                 </div>
                             </div>
-
                              <!-- Description and links-->
                              <div class="block">
                                 <p><strong>Context:</strong> Map of the U.S. that contains the judicial nominees made by President Joe Biden as of December 2023. Data was scraped from the White House website.
                                 </p>
                                 <a target="_blank" href="https://katrventura.github.io/judicial-nominees-website/" button class="button is-dark">Read more</a>
                             </div>
-
-                        
                             </section>
                         </div>
-
                         <!-- portfolio section closing tags -->
                     </div>
             </div>
         </div>
     </section>
-
-
   <!-- Footer Section -->
   <footer class="footer">
     <div class="content has-text-centered">
     <p>I created this website using <strong>Bulma</strong>.</p>
     </div>
 </footer>
-
-
-
-
-
 </body>
-
 </html>
