@@ -2,132 +2,291 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script type="text/javascript" src="scripts.js"></script>
-    <title>katrventura</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Katrina Ventura Portfolio</title>
+
+    <meta property="og:title" content="Katrina Ventura Portfolio">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@katrventura">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Yeseva+One&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .content {
+            max-width: 720px;
+            margin: auto;
+        }
+
+        .header {
+            padding: 3em 0;
+        }
+
+        h1 {
+            font-family: 'Yeseva One', Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 3.5em;
+            line-height: 1.1;
+        }
+
+
+
+        p {
+            font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding-bottom: 1.2em;
+        }
+
+        a {
+            color: #2271d2;
+        }
+
+        .footer {
+            background: #b1ada8;
+            text-align: center;
+            font-size: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(249, 248, 246);
+            margin-top: 4em;
+            padding: 4em 0;
+        }
+
+        div.polaroid {
+            text-align: left;
+            width: 80%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        img {
+            width: 100%
+        }
+
+        div.container {
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-container>div {
+            margin: 10px;
+            padding: 20px;
+        }
+
+        div.gallery {
+            border: 1px solid #ccc;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .responsive {
+            padding: 0 6px;
+            float: left;
+            width: 24.99999%;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .responsive {
+                width: 49.99999%;
+                margin: 6px 0;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .responsive {
+                width: 100%;
+            }
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .fa {
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+        .fa-github {
+            background: red;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-<!-- Introduction Section -->
-    <section id="introduction" class="hero is-fullheight is-bold is-light">
-        <div class="hero-body">
+
+    <div class="content">
+        <div class="header">
+            <h1>Hi, I'm Katrina Ventura!</h1>
+            <p>I'm a journalist from the Philippines who is taking my MS in Data Journalism at Columbia University.
+                These are some of the data projects I worked on using <strong>Python, BeautifulSoup, Datawrapper, Regex,
+                    API,</strong> and <strong>Playwright</strong>.</p>
+        
+            <a href="https://www.linkedin.com/in/katrventura/" class="fa fa-linkedin"></a>
+
+            <a href="https://github.com/katrventura" class="fa fa-github"></a>
+
+        </div>
+       
+
+        <h2>Portfolio</h2>
+    
+
+        <!-- fgm-orchids -->
+        <div class="polaroid">
+            <img src="fgm-orchids.png" alt="fgm-orchids" style="width:100%">
             <div class="container">
-                <div class="columns is-vcentered">
-                    <div class="column is-half">
-                        <div class="language-container">
-                            <p>
-                                <a href="#" class="language-link-disabled">Filipino</a> |
-                                <a href="#" class="language-link">English</a>
-                            </p>
-                        </div>
-                        <h1 class="title is-size-1">Hi, I'm Katrina Ventura!</h1>
-                        <p class="subtitle is-size-4">I'm a journalist based in New York and I tell stories with data.</p>
-                        <button 
-                          onclick="scrollStories()"
-                          class="button is-dark is-active"
-                        >
-                          See Stories
-                        </button>
-                    </div>
-                </div>
+                <h3>Caring for Orchids: A Visual Narrative of Female Genital Mutilation</h3>
+                <p>Just as orchids defy the odds and flourish in the most challenging of environments, so too do
+                    individuals impacted by the practice of female genital mutilation (FGM). This data story illustrates
+                    the harms of FGM using orchids as metaphors.</p>
+                <p><a href="https://katrventura.github.io/fgm-orchids/">Read Story</a> | <a
+                        href="https://github.com/katrventura/fgm-orchids">View GitHub</a>
+                </p>
             </div>
         </div>
-    </section>
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section">
-        <div class="container">
-            <h1 class="title is-size-2">Portfolio</h1>
-            <p>
-              These are some of my data projects. I worked on it using <strong>Python, BeautifulSoup, Datawrapper, Regex, API,</strong>
-              and <strong>Playwright</strong>. If you have any questions or suggestions for data projects, feel free to connect 
-              with me on <a href="https://www.linkedin.com/in/katrventura/">LinkedIn</a>. You can also find the code to my projects 
-              on <a href="https://github.com/katrventura">GitHub</a>.
-            </p>
-            <div class="tabs">
-                <div class="tabs">
-                    <ul>
-                      <li class="tab" onclick="changeTab('All')">
-                        <a href="#portfolio" class="All" onclick="filterItems('All')">All</a>
-                      </li>
-                      <li class="tab" onclick="changeTab('Maps')">
-                        <a href="#maps" class="Maps" onclick="filterItems('Maps')">Maps</a>
-                      </li>
-                      <li>
-                        <a href="#dataviz" class="Dataviz" onclick="filterItems('Dataviz')">DataViz</a>
-                      </li>
-                      <li>
-                        <a href="#scrapers" class="Scrapers" onclick="filterItems('Scrapers')">Scrapers</a>
-                      </li>
-                    </ul>
-                  </div>
-              </div>
-                    <div class="columns is-multiline content">
-                        <!-- Item 1 -->
-                        <div class="column is-half portfolio-item Dataviz">
-                        <section id="dataviz" class="section">
-                            <!-- Add content here -->
-                            <div class="block">
-                                <iframe title="Two Sides to the Pumpkin Spice Story" aria-label="Interactive line chart" src="https://datawrapper.dwcdn.net/TQ7xU/4/" scrolling="no" frameborder="0" style="width:100%; border: none;" height="400" data-external="1"></iframe>
-                                <div class="tags">
-                                    <span class="tag is-rounded is-info is-light">DataViz</span>
-                                </div>
-                            </div>
-                            <!-- Description and links-->
-                            <div class="block">
-                                <p>Data story on the rise of pumpkin spice dollar sales based on NielsenIQ data and interviews with experts.
-                                </p>
-                                <a target="_blank" href="https://medium.com/@katrventura/20-years-later-pumpkin-spice-sales-reach-800-million-but-its-not-because-consumers-buy-more-68394cf4f65a" button class="button is-dark">Read more</a>
-                            </div>
-                        </section>
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="column is-half portfolio-item Scrapers">
-                        <section id="scrapers" class="section">
-                            <!-- Add content for Item 2 here -->
-                            <div class="block">
-                                <div style="min-height:475px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/U7F35/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/U7F35/full.png" alt="" /></noscript></div>
-                                <div class="tags">
-                                    <span class="tag is-rounded is-warning is-light">Scrapers</span>
-                                </div>
-                            </div>
-                            <!-- Description and links-->
-                            <div class="block">
-                                <p>Website that tracks the campaign finances of candidates running for president in the U.S. elections in 2024. This data is auto-scraped from the Federal Elections Commission API.
-                                </p>
-                                <a target="_blank" href="https://katrventura.github.io/campaign-funds-2024/" button class="button is-dark">Read more</a>
-                            </div>
-                        </section>
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="column is-half portfolio-item Maps">
-                            <section id="maps" class="section">
-                            <!-- Title and Image -->
-                            <div class="block">
-                                <h3>Biden's Judicial Nominees</h3>
-                                <iframe title="Judicial Nominees Map" aria-label="Interactive map" src="https://katrventura.github.io/judicial-nominees-website/" scrolling="no" frameborder="0" style="width:100%; border: none;" height="400"></iframe>
-                                  <div class="tags">
-                                    <span class="tag is-rounded is-success is-light">Maps</span>
-                                </div>
-                            </div>
-                             <!-- Description and links-->
-                             <div class="block">
-                                <p>Geo json map showing the judicial nominees made by President Joe Biden as of December 2023. Data was scraped from the White House website using BeautifulSoup and regex.
-                                </p>
-                                <a target="_blank" href="https://katrventura.github.io/judicial-nominees-website/" button class="button is-dark">Read more</a>
-                            </div>
-                            </section>
-                        </div>
-                        <!-- portfolio section closing tags -->
-                    </div>
+        
+        <br></br>
+
+        <!-- world elections -->
+        <div class=" polaroid">
+            <img src="world-elections.png" alt="world-elections" style="width:100%">
+            <div class="container">
+                <h3>Which Way Will the World Vote?</h3>
+                <p>Around 64 countries are holding their elections in 2024. This project scrapes the voter turnout
+                    from
+                    each election monitored by the International Foundation for Electoral Systems website using
+                    Python,
+                    Playwright, and BeautifulSoup. A diverging bar chart is then used to show which way each country
+                    voted: progressive or conservative. </p>
+                <p><a href="https://katrventura.github.io/elections-scraper/">Read Story</a> | <a
+                        href="https://github.com/katrventura/elections-scraper">View GitHub</a>
+                </p>
             </div>
         </div>
-    </section>
-  <!-- Footer Section -->
-  <footer class="footer">
-    <div class="content has-text-centered">
-    <p>This website was created using <strong>Bulma</strong>.</p>
-    </div>
-</footer>
+        <br></br>
+
+        <!-- sea turtles -->
+
+        <div class="polaroid">
+            <img src="sea-turtles.png" alt="sea-turtles" style="width:100%">
+            <div class="container">
+                <h3>Feminine Waves: How Warming Climate Affects Sex of Sea Turtle Hatchlings</h3>
+                <p>This story maps out sea turtle nesting locations in the Asia and Pacific region from the State of the
+                    World's Sea Turtles database with the annual global climate report of the National Oceanic and
+                    Atmospheric Administration (NOAA).</p>
+                <p><a href="https://katrventura.github.io/climate-turtle-gender/">Read Story</a> | <a
+                        href="https://github.com/katrventura/climate-turtle-gender">View GitHub</a>
+                </p>
+            </div>
+        </div>
+
+        <br></br>
+
+        <!-- FEC Scraper -->
+        <div class="polaroid">
+            <img src="campaign-funds.png" alt="campaign-funds" style="width:100%">
+            <div class="container">
+                <h3>Biden, Haley Cash On Hand Increased At the End of 2023 </h3>
+                <p>This data tool tracks the campaign finances of candidates running for president in the U.S. elections
+                    using data auto-scraped from the Federal Elections Commission API.</p>
+                <p><a href="https://github.com/katrventura/campaign-funds-2024">View GitHub</a></p>
+            </div>
+        </div>
+
+        <br></br>
+
+        <!-- judicial nominees -->
+        <div class="polaroid">
+            <img src="judicial-nominees.png" alt="judicial-nominees" style="width:100%">
+            <div class="container">
+                <h3>Biden's Judicial Nominees</h3>
+                <p>As of December 2023, U.S. President Joe Biden has nominated 140 individuals in the federal district
+                    court. More than half of the appointed judges are women. This map shows names of the individuals
+                    Biden nominated for each judicial district as of December 2023. Data was scraped from the White
+                    House website using Python, BeautifulSoup and regex.</p>
+                <p><a
+                        href="https://medium.com/@katrventura/20-years-later-pumpkin-spice-sales-reach-800-million-but-its-not-because-consumers-buy-more-68394cf4f65a">Read
+                        Story</a></p>
+            </div>
+        </div>
+
+        <br></br>
+        <!-- pumpkin spice -->
+        <div class="polaroid">
+            <img src="pumpkin-spice.png" alt="pumpkin-spice" style="width:100%">
+            <div class="container">
+                <h3>Two Sides to the Pumpkin Spice Story</h3>
+                <p>After 20 years, pumpkin spice sales have reached $800 million but the number of units of pumpkin
+                    spice-flavored items went down for a second straight year. This data story looks at theories around
+                    the rise and fall of pumpkin spice sales.</p>
+                <p><a
+                        href="https://medium.com/@katrventura/20-years-later-pumpkin-spice-sales-reach-800-million-but-its-not-because-consumers-buy-more-68394cf4f65a">Read
+                        Story</a></p>
+            </div>
+        </div>
+</div>
+
+<div class="footer">
+    <p>This website was created by me using <strong>CSS</strong>.</p>
+</div>
 </body>
+
 </html>
