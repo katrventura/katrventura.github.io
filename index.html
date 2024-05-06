@@ -1,17 +1,11 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Katrina Ventura Portfolio</title>
-
-    <meta property="og:title" content="Katrina Ventura Portfolio">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@katrventura">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,321 +20,332 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
+        /* Reset styles */
+        * {
             margin: 0;
             padding: 0;
-            color: #333;
+            box-sizing: border-box;
         }
 
-        .content {
-            max-width: 720px;
-            margin: auto;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F6EBD9;
         }
 
-        div.container {
-            text-align: center;
-            padding: 10px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-
-        .header {
-            padding: 60px;
+        header {
+            background-color: #F6EBD9;
+            padding: 20px;
             text-align: left;
-            background: white;
-            color: #333;
-            font-size: 20px;
-
-
         }
 
-
-        h1 {
-            font-family: 'Zen Maru Gothic', Arial, Helvetica, sans-serif;
-            font-weight: bold;
-            font-size: 2.5em;
-            line-height: 1.1;
-        }
-
-
-
-        p {
-            font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding-bottom: 1.2em;
-        }
-
-        a {
-            color: #2271d2;
-        }
-
-        .footer {
-            background: #b1ada8;
-            text-align: center;
-            font-size: 1em;
-            font-family: Arial, Helvetica, sans-serif;
-            color: rgb(249, 248, 246);
-            margin-top: 4em;
-            padding: 4em 0;
-        }
-
-        div.polaroid {
-            margin: auto;
+        .about-section {
+            padding: 60px 20px;
+            /* Add horizontal padding for mobile */
             text-align: left;
-            width: 80%;
-            background-color: white;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background-color: #F6EBD9;
+            color: black;
+            border-bottom: 1px #979393;
         }
 
-        img {
-            width: 100%
+        nav {
+            margin-bottom: 10px;
         }
 
-        div.container {
-            text-align: center;
-            padding: 10px 20px;
-        }
-
-        .polaroid-container {
+        .menu {
+            list-style-type: none;
             display: flex;
-            justify-content: space-between;
-            /* Adjust this property as needed */
+            justify-content: left;
+            flex-wrap: wrap;
+            font-family: 'Nunito', sans-serif;
+            color: #979393;
+            /* Allow menu items to wrap on smaller screens */
         }
 
-        .fa {
-            padding: 10px;
-            text-align: center;
+        .menu li {
+            margin: 5px 10px;
+            /* Adjust margin for mobile */
+        }
+
+        .menu a {
             text-decoration: none;
-
+            color: #979393;
         }
 
-        .fa:hover {
-            opacity: 0.7;
-        }
-
-
-        .fa-linkedin {
-            background: #676b6d;
-            color: white;
-        }
-
-        .fa-github {
-            background: #676b6d;
-            color: white;
-        }
-
-        /* Gray */
-        .default {
-            border-color: #e7e7e7;
+        .menu a.active {
+            text-decoration: underline;
             color: black;
         }
 
-        /* Solid border */
-        hr.solid {
-            border-top: 3px solid #bbb;
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-family: 'Tinos', Georgia, serif;
+            font-size: 3em;
+            line-height: 1.1;
+            text-align: left;
+            font-weight: 500;
+            text-rendering: optimizeLegibility;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .card {
+            padding: 20px;
+            text-align: left;
+            position: relative;
+            font-family: 'Tinos', Georgia, serif;
+
+
         }
 
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #8E8E8E;
-            color: #ffffff;
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+
+        .image-container img {
+            max-width: 100%;
+            object-fit: contain;
+            height: 550px;
+
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #f4f4ca;
+
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+
+
+        a {
             text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            color: rgba(194, 77, 34, 0.856);
         }
 
-        .btn.default:hover {
-            background-color: #0056b3;
+        .text {
+            color: gray;
+            font-size: 16px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-family: 'Nunito', sans-serif;
         }
 
-        .btn.default:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+        .title {
+            font-size: 24px;
+            color: #4b4545;
         }
 
-        /* Responsive styles for smaller screens */
-        @media screen and (max-width: 768px) {
-            .btn {
-                padding: 8px 16px;
-                /* Adjust padding for smaller screens */
-                font-size: 14px;
-                /* Decrease font size for smaller screens */
+        .name {
+            font-size: 36px;
+            color: #333;
+            font: 'Nunito', sans-serif;
+        }
+
+        .footer {
+            background-color: #F6EBD9;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Media Queries for Mobile Screens */
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+                /* Display one column on mobile */
             }
         }
     </style>
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="https://katrventura.github.io" class="active">PROJECTS</a></li>
+                <li><a href="https://www.linkedin.com/in/katrventura/" target="_blank">ABOUT</a></li>
+                <li><a href="./assets/Katrina_Ventura_resume.pdf" download="./assets/Katrina_Ventura_resume.pdf">RESUME</a></li>
+                <li><a href="mailto:mrv2130@columbia.edu" target="_blank">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Header -->
-    <div class="container">
-        <div class="header">
+    <div class="about-section">
+        <div class="title">
             <h1>KATRINA VENTURA</h1>
-            <p>I'm a Filipino journalist in New York pursuing my Master's in Data Journalism at Columbia University.
-                These are some of the data projects I worked on using <strong>Python, BeautifulSoup, Datawrapper, Regex,
-                    API,</strong> and <strong>Playwright</strong>.</p>
-
-            <a href="https://www.linkedin.com/in/katrventura/" class="fa fa-linkedin"></a>
-
-            <a href="https://github.com/katrventura" class="fa fa-github"></a>
-            <hr class="solid">
+            <p> — Data journalist and news producer based in New York.</p>
         </div>
-
     </div>
+    <hr>
 
-    <div class="content">
-        <!-- fgm-orchids -->
-
-        <div class="polaroid">
-            <a href="https://katrventura.github.io/fgm-orchids/"><img src="fgm-orchids.png" alt="fgm-orchids"
-                    style="width:100%"></a>
-            <div class="container">
-                <h3>Cutting Orchids: A Visual Narrative of Female Genital Mutilation</h3>
-                <p>Just as orchids defy the odds and flourish in the most challenging of environments, so too do
-                    individuals impacted by the practice of female genital mutilation (FGM). This data story
-                    illustrates
-                    the harms of FGM using orchids as metaphors.</p>
-                <p>
-                    <a href="https://katrventura.github.io/fgm-orchids/" class="btn default">Read More</a>
-
-                    <a href="https://github.com/katrventura/fgm-orchids" class="btn default">See GitHub</a>
-                </p>
+    <main>
+        <div class="card-grid">
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/columbia-encampment/" target="_blank">
+                        <img src="./assets/columbia-encampment.png" alt="columbia encampment">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/columbia-encampment/" target="_blank">
+                    <h2>Columbia Encampment</h2>
+                </a>
+                <p>A scrollytelling timeline of the movement of the Gaza Solidarity Encampment inside Columbia University
+                    using Google Earth Pro satellite images, JavaScript, and D3.</p>
+                <br>
+                <p>featured in <a href="https://columbianewsservice.com/2024/05/03/protest/"> Columbia News Service</p></a>
             </div>
-        </div>
 
-        <br></br>
-        <!-- world elections -->
-
-        <div class=" polaroid">
-            <a href="https://katrventura.github.io/elections-scraper/"><img src="world-elections.png"
-                    alt="world-elections" style="width:100%"></a>
-            <div class="container">
-                <h3>Which Way Will the World Vote?</h3>
-                <p>Around 64 countries are holding their elections in 2024. This project scrapes the voter
-                    turnout
-                    from
-                    each election monitored by the International Foundation for Electoral Systems website using
-                    Python,
-                    Playwright, and BeautifulSoup. A diverging bar chart is then used to show which way each
-                    country
-                    voted: progressive or conservative. </p>
-                <p>
-                    <a href="https://katrventura.github.io/elections-scraper/" class="btn default">Read More</a>
-
-                    <a href="https://github.com/katrventura/elections-scraper" class="btn default">See
-                        GitHub</a>
-
-                </p>
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/west-ph-sea/" target="_blank">
+                        <img src="./assets/military-bases.png" alt="militarized islands">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/west-ph-sea/" target="_blank">
+                    <h2>Militarized Islands</h2>
+                </a>
+                <p>Scrollytelling piece of Chinese artificial islands in the South China Sea, using satellite
+                    images and D3/JavaScript.</p>
+                <br></br>
+                <p>featured in <a href="https://www.sealight.live/resources">SeaLight website</a></p>
             </div>
-        </div>
 
 
-        <br></br>
-
-        <!-- sea turtles -->
-
-        <div class="polaroid">
-            <a href="https://katrventura.github.io/climate-turtle-gender/"><img src="sea-turtles.png" alt="sea-turtles"
-                    style="width:100%"></a>
-            <div class="container">
-                <h3>Feminine Waves: How Warming Climate Affects Sex of Sea Turtle Hatchlings</h3>
-                <p>This story maps out sea turtle nesting locations in the Asia and Pacific region from the
-                    State of
-                    the
-                    World's Sea Turtles database with the annual global climate report of the National Oceanic
-                    and
-                    Atmospheric Administration (NOAA).</p>
-                <p>
-                    <a href="https://katrventura.github.io/climate-turtle-gender/" class="btn default">Read
-                        More</a>
-
-                    <a href="https://github.com/katrventura/climate-turtle-gender" class="btn default">See
-                        GitHub</a>
-
-                </p>
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/fgm-orchids/" target="_blank">
+                        <img src="./assets/fgm-orchids.png" alt="FGM orchids">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/fgm-orchids/" target="_blank">
+                    <h2>Cutting Orchids</h2>
+                </a>
+                <p>Visual narrative illustrating types of female genital mutilations using orchids as metaphors,
+                    created in
+                    Adobe Illustrator and DataWrapper.</p>
             </div>
-        </div>
 
-        <br></br>
-
-        <!-- FEC Scraper -->
-        <div class="polaroid">
-            <a href="https://github.com/katrventura/campaign-funds-2024"><img src="campaign-funds.png"
-                    alt="campaign-funds" style="width:100%"></a>
-            <div class="container">
-                <h3>Biden, Haley Cash On Hand Increased At the End of 2023 </h3>
-                <p>This data tool tracks the campaign finances of candidates running for president in the U.S.
-                    elections
-                    using data auto-scraped from the Federal Elections Commission API.</p>
-                <p>
-                    <a href="https://github.com/katrventura/campaign-funds-2024" class="btn default">See
-                        GitHub</a>
-                </p>
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/elections-scraper/" target="_blank">
+                        <img src="./assets/world-elections.png" alt="world elections">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/elections-scraper/" target="_blank">
+                    <h2>Elections Calendar</h2>
+                </a>
+                <p>Balance calendar of elections in 2024 around the world, custom chart made using Adobe
+                    Illustrator.</p>
             </div>
-        </div>
 
-        <br></br>
-
-        <!-- judicial nominees -->
-        <div class="polaroid">
-            <a href="https://katrventura.github.io/judicial-nominees-website/"><img src="judicial-nominees.png"
-                    alt="judicial-nominees" style="width:100%"></a>
-            <div class="container">
-                <h3>Biden's Judicial Nominees</h3>
-                <p>As of December 2023, U.S. President Joe Biden has nominated 140 individuals in the federal
-                    district
-                    court. More than half of the appointed judges are women. This map shows names of the
-                    individuals
-                    Biden nominated for each judicial district as of December 2023. Data was scraped from the
-                    White
-                    House website using Python, BeautifulSoup and regex.</p>
-                <p>
-                    <a href="https://katrventura.github.io/judicial-nominees-website/" class="btn default">Read
-                        More</a>
-
-                    <a href="https://github.com/katrventura/biden-judicial-nominees" class="btn default">See
-                        GitHub</a>
-
-                </p>
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/climate-turtle-gender/" target="_blank">
+                        <img src="./assets/sea-turtles.png" alt="sea turtles">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/climate-turtle-gender/" target="_blank">
+                    <h2>Sea Turtles</h2>
+                </a>
+                <p>Data story on rising temperatures and its effects on the gender of sea turtles, charts and
+                    maps made using Python and Mapbox.</p>
             </div>
-        </div>
 
-        <br></br>
-        <!-- pumpkin spice -->
-        <div class="polaroid">
-            <a
-                href="https://medium.com/@katrventura/20-years-later-pumpkin-spice-sales-reach-800-million-but-its-not-because-consumers-buy-more-68394cf4f65a"><img
-                    src="pumpkin-spice.png" alt="pumpkin-spice" style="width:100%"></a>
-            <div class="container">
-                <h3>Two Sides of the Pumpkin Spice Story</h3>
-                <p>After 20 years, pumpkin spice sales have reached $800 million but the number of units of
-                    pumpkin
-                    spice-flavored items went down for a second straight year. This data story looks at theories
-                    around
-                    the rise and fall of pumpkin spice sales.</p>
-                <p>
+
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://github.com/katrventura/campaign-funds-2024" target="_blank">
+                        <img src="./assets/campaign-funds.png" alt="campaign funds">
+                    </a>
+                </div>
+                <a href="https://github.com/katrventura/campaign-funds-2024" target="_blank">
+                    <h2>Campaign Funds</h2>
+                </a>
+                <p>Auto-scraper of campaign finances of candidates running for president in the U.S. elections
+                    using data from the Federal Elections Commission API.</p>
+            </div>
+
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/judicial-nominees-website/" target="_blank">
+                        <img src="./assets/judicial-nominees.png" alt="judicial nominees">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/judicial-nominees-website/" target="_blank">
+                    <h2>Judicial Nominees</h2>
+                </a>
+                <p>Map of U.S. President Joe Biden's judicial nominees as of December 2023, data scraped from
+                    the White House website using Python, BeautifulSoup and regex.</p>
+            </div>
+
+            <div class="card">
+                <div class="image-container">
                     <a href="https://medium.com/@katrventura/20-years-later-pumpkin-spice-sales-reach-800-million-but-its-not-because-consumers-buy-more-68394cf4f65a"
-                        class="btn default">Read More</a>
-                </p>
+                        target="_blank">
+                        <img src="./assets/pumpkin-spice.png" alt="pumpkin spice">
+                    </a>
+                </div>
+                <a href="https://medium.com/@katrventura/20-years-later-pumpkin-spice-sales-reach-800-million-but-its-not-because-consumers-buy-more-68394cf4f65a"
+                    target="_blank">
+                    <h2>Pumpkin Spice</h2>
+                </a>
+                <p>Consumer story on pumpkin spice products sales in 2023, chart created in DataWrapper.</p>
             </div>
-        </div>
-    </div>
 
-    <div class="footer">
-        <p>This website was created using <strong>CSS</strong>.</p>
-    </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>© 2024 Katrina Ventura</p>
+        </div>
+
 </body>
 
 </html>
