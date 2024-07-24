@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Yeseva+One&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F6EBD9;
+        }
+
+        header {
+            background-color: #F6EBD9;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .about-section {
+            padding: 60px 20px;
+            /* Add horizontal padding for mobile */
+            text-align: left;
+            background-color: #F6EBD9;
+            color: black;
+            border-bottom: 1px #979393;
+        }
+
+        nav {
+            margin-bottom: 10px;
+        }
+
+        .menu {
+            list-style-type: none;
+            display: flex;
+            justify-content: left;
+            flex-wrap: wrap;
+            font-family: 'Nunito', sans-serif;
+            color: #979393;
+            /* Allow menu items to wrap on smaller screens */
+        }
+
+        .menu li {
+            margin: 5px 10px;
+            /* Adjust margin for mobile */
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #979393;
+        }
+
+        .menu a.active {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-family: 'Tinos', Georgia, serif;
+            font-size: 3em;
+            line-height: 1.1;
+            text-align: left;
+            font-weight: 500;
+            text-rendering: optimizeLegibility;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .card {
+            padding: 20px;
+            text-align: left;
+            position: relative;
+            font-family: 'Tinos', Georgia, serif;
+
+
+        }
+
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+
+        .image-container img {
+            max-width: 100%;
+            object-fit: contain;
+            height: 550px;
+
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #f4f4ca;
+
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+
+
+        a {
+            text-decoration: none;
+            color: rgba(194, 77, 34, 0.856);
+        }
+
+        .text {
+            color: gray;
+            font-size: 16px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .title {
+            font-size: 24px;
+            color: #4b4545;
+        }
+
+        .name {
+            font-size: 36px;
+            color: #333;
+            font: 'Nunito', sans-serif;
+        }
+
+        .footer {
+            background-color: #F6EBD9;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Media Queries for Mobile Screens */
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+                /* Display one column on mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="https://katrventura.github.io" class="active">PROJECTS</a></li>
+                <li><a href="https://www.linkedin.com/in/katrventura/" target="_blank">ABOUT</a></li>
+                <li><a href="./assets/Katrina_Ventura_resume.pdf" download="./assets/Katrina_Ventura_resume.pdf">RESUME</a></li>
+                <li><a href="mailto:mrv2130@columbia.edu" target="_blank">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="about-section">
+        <div class="title">
+            <h1>KATRINA VENTURA</h1>
+            <p> — Data journalist and news producer based in New York.</p>
+        </div>
+    </div>
+    <hr>
+
+    <main>
+        <div class="card-grid">
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/columbia-encampment/" target="_blank">
+                        <img src="./assets/columbia-encampment.png" alt="columbia encampment">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/columbia-encampment/" target="_blank">
+                    <h2>Columbia Encampment</h2>
+                </a>
+                <p>A scrollytelling timeline of the movement of the Gaza Solidarity Encampment inside Columbia University
+                    using Google Earth Pro satellite images, JavaScript, and D3.</p>
+                <br>
+                <p>featured in <a href="https://columbianewsservice.com/2024/05/03/protest/"> Columbia News Service</p></a>
+            </div>
+
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/west-ph-sea/" target="_blank">
+                        <img src="./assets/military-bases.png" alt="militarized islands">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/west-ph-sea/" target="_blank">
+                    <h2>Militarized Islands</h2>
+                </a>
+                <p>Scrollytelling piece of Chinese artificial islands in the South China Sea, using satellite
+                    images and D3/JavaScript.</p>
+                <br></br>
+                <p>featured in <a href="https://www.sealight.live/resources">SeaLight website</a></p>
+            </div>
+
+
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/fgm-orchids/" target="_blank">
+                        <img src="./assets/fgm-orchids.png" alt="FGM orchids">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/fgm-orchids/" target="_blank">
+                    <h2>Cutting Orchids</h2>
+                </a>
+                <p>Visual narrative illustrating types of female genital mutilations using orchids as metaphors,
+                    created in
+                    Adobe Illustrator and DataWrapper.</p>
+            </div>
+
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/elections-scraper/" target="_blank">
+                        <img src="./assets/world-elections.png" alt="world elections">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/elections-scraper/" target="_blank">
+                    <h2>Elections Calendar</h2>
+                </a>
+                <p>Balance calendar of elections in 2024 around the world, custom chart made using Adobe
+                    Illustrator.</p>
+            </div>
+
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/climate-turtle-gender/" target="_blank">
+                        <img src="./assets/sea-turtles.png" alt="sea turtles">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/climate-turtle-gender/" target="_blank">
+                    <h2>Sea Turtles</h2>
+                </a>
+                <p>Data story on rising temperatures and its effects on the gender of sea turtles, charts and
+                    maps made using Python and Mapbox.</p>
+            </div>
+
+
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://github.com/katrventura/campaign-funds-2024" target="_blank">
+                        <img src="./assets/campaign-funds.png" alt="campaign funds">
+                    </a>
+                </div>
+                <a href="https://github.com/katrventura/campaign-funds-2024" target="_blank">
+                    <h2>Campaign Funds</h2>
+                </a>
+                <p>Auto-scraper of campaign finances of candidates running for president in the U.S. elections
+                    using data from the Federal Elections Commission API.</p>
+            </div>
+
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://katrventura.github.io/judicial-nominees-website/" target="_blank">
+                        <img src="./assets/judicial-nominees.png" alt="judicial nominees">
+                    </a>
+                </div>
+                <a href="https://katrventura.github.io/judicial-nominees-website/" target="_blank">
+                    <h2>Judicial Nominees</h2>
+                </a>
+                <p>Map of U.S. President Joe Biden's judicial nominees as of December 2023, data scraped from
+                    the White House website using Python, BeautifulSoup and regex.</p>
+            </div>
+
+            <div class="card">
+                <div class="image-container">
+                    <a href="https://medium.com/@katrventura/20-years-later-pumpkin-spice-sales-reach-800-million-but-its-not-because-consumers-buy-more-68394cf4f65a"
+                        target="_blank">
+                        <img src="./assets/pumpkin-spice.png" alt="pumpkin spice">
+                    </a>
+                </div>
+                <a href="https://medium.com/@katrventura/20-years-later-pumpkin-spice-sales-reach-800-million-but-its-not-because-consumers-buy-more-68394cf4f65a"
+                    target="_blank">
+                    <h2>Pumpkin Spice</h2>
+                </a>
+                <p>Consumer story on pumpkin spice products sales in 2023, chart created in DataWrapper.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>© 2024 Katrina Ventura</p>
+        </div>
+
+</body>
+
+</html>
