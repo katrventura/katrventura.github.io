@@ -16,10 +16,6 @@
         color: white;
     }
 
-    figure {
-        margin: 0;
-    }
-
     .section {
         padding-top: 20px;
         padding-bottom: 20px;
@@ -33,18 +29,12 @@
         display: block;
     }   
 
-    .hero-body {
+    .hero-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
-    }
-
-    .hero-container {
-        display: flex;
-        justify-content: left;
-        align-items: left;
         flex-direction: row;
+        height: 100%;
     }
 
     .hero-text {
@@ -53,12 +43,9 @@
         justify-content: left;
         align-items: left;
         padding-top: 30px;
+        line-height: 0.5;
     }
-    .hero-text p {
-        margin-left: 20px;
-        /* padding-top: 10px; */
-        line-height: 0.7;
-    }
+
 
     .container {
         max-width: 960px;
@@ -96,13 +83,33 @@
 
     @media query and (max-width: 630px) {
         .container {
-            max-width: 90%;
-            display: flex;
+          max-width: 90%;
+          display: flex;
           justify-content: center;
 
         }
+
+        .hero-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+
+    }
+       .hero {
+        max-width: 90%;
+       }
+
     }
 
+    .section .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: center;
+
+    }
 </style>
 
 </head>
@@ -111,7 +118,7 @@
 
 <!-- Introduction Section -->
     <section class="hero is-medium is-bold is-light">
-        <div class="hero-head">
+        <!-- <div class="hero-head">
             <!-- <nav class = "navbar">
                 <span class="navbar-burger" data-target="navbarMenuHeroA">
                     <span></span>
@@ -126,16 +133,16 @@
                     <a class="button is-dark is-inverted" href="./assets/Katrina_Ventura_resume.pdf" download="./assets/Katrina_Ventura_resume.pdf">Resume</a>
                 </div>
             </nav> -->
-        </div>
+        </div> -->
 
         <div class = "hero-body">
             <div class="hero-container">   
               <figure class="image is-128x128">
-                <img class="is-rounded" src="assets/profile-wbg.png"/>
+                <img class="is-rounded" src="assets/profile-nobg.png"/>
               </figure>
               <div class = "hero-text">
                 <p class="title is-size-1">Katrina Ventura</p>
-                <p class="subtitle is-size-4">Data Visualization Developer based in New York</p>
+                <p class="subtitle is-size-4">Data Visualization Developer based in NYC</p>
             </div>
         </div>
     </section>
