@@ -16,6 +16,10 @@
         color: white;
     }
 
+    figure {
+        margin: 0;
+    }
+
     .section {
         padding-top: 20px;
         padding-bottom: 20px;
@@ -29,9 +33,37 @@
         display: block;
     }   
 
+    .hero-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .hero-container {
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        flex-direction: row;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+        padding-top: 30px;
+    }
+    .hero-text p {
+        margin-left: 20px;
+        /* padding-top: 10px; */
+        line-height: 0.7;
+    }
+
     .container {
         max-width: 960px;
         padding-bottom: 20px;
+        font-size: 1.5rem;
     }
 
     .card {
@@ -42,12 +74,12 @@
 
     }
 
-        .card-content {
+      .card-content {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
         position: relative;
-        padding-bottom: 3rem; /* Adjust this value as needed */
+        padding-bottom: 1rem; /* Adjust this value as needed */
     }
 
     .card-content .button {
@@ -62,10 +94,12 @@
         padding-bottom: 10px;
     }
 
-
     @media query and (max-width: 630px) {
         .container {
             max-width: 90%;
+            display: flex;
+          justify-content: center;
+
         }
     }
 
@@ -78,7 +112,7 @@
 <!-- Introduction Section -->
     <section class="hero is-medium is-bold is-light">
         <div class="hero-head">
-            <nav class = "navbar">
+            <!-- <nav class = "navbar">
                 <span class="navbar-burger" data-target="navbarMenuHeroA">
                     <span></span>
                     <span></span>
@@ -91,16 +125,19 @@
                     <a class="navbar-item" href="https://github.com/katrventura">GitHub</a>
                     <a class="button is-dark is-inverted" href="./assets/Katrina_Ventura_resume.pdf" download="./assets/Katrina_Ventura_resume.pdf">Resume</a>
                 </div>
-            </nav>
+            </nav> -->
         </div>
 
         <div class = "hero-body">
-            <div class="container">   
+            <div class="hero-container">   
+              <figure class="image is-128x128">
+                <img class="is-rounded" src="assets/profile-wbg.png"/>
+              </figure>
+              <div class = "hero-text">
                 <p class="title is-size-1">Katrina Ventura</p>
-                <p class="subtitle is-size-4">Data Visualization Developer</p>
+                <p class="subtitle is-size-4">Data Visualization Developer based in New York</p>
             </div>
         </div>
-
     </section>
 
 <div class="hero-foot">
@@ -111,6 +148,8 @@
       <li class="tab"><a href="#maps" onclick="filterItems('Maps')">Maps</a></li>
       <li class="tab"><a href="#dataviz" onclick="filterItems('Interactives')">Interactives</a></li>
       <li class="tab"><a href="#scrapers" onclick="filterItems('Charts')">Charts</a></li>
+      <li class="tab is-active"><a href="./assets/Katrina_Ventura_resume.pdf" download="./assets/Katrina_Ventura_resume.pdf">Resume</a></li>
+
     </ul>
   </div>
 </div>
@@ -130,32 +169,11 @@
 
 const projects = [
 
-{ title: "NYC Child Services", 
-  description: "Multiple linear regression analysis of NYC child services data using R, and Adobe Illustrator.", 
-  category: "Maps",
-  image: "assets/foster-care.png",
-url:"https://katrventura.github.io/nyc-child-services/"
-},
-
-{ title: "Covid-19 Map", 
-  description: "NYC Covid Case Rate for the last 7 days in each borough, using data from the NYC Health Department and Mapbox.", 
-  category: "Maps",
-  image: "assets/covid-map.png",
-  url: "https://katrventura.github.io/nyc-covid-map/"
-},
-
-{ title: "Word Analysis", 
-  description: "CNN Presidential Debate word analysis using Python, BeautifulSoup, and D3.", 
+{ title: "Militarized Islands", 
+  description: "Scrollytelling piece of Chinese artificial islands in the South China Sea, using satellite images and D3/JavaScript. Featured on <a href='https://www.sealight.live/resources'>SeaLight</a>.", 
   category: "Interactives",
-  image: "assets/word-analysis.png",
-  url: "https://katrventura.github.io/cnn-debate/"
-},
-
-{ title: "No diplomas", 
-  description: "U.S. counties where a quarter of the voting-age population did not finish high school, using data from the U.S. Census Bureau and Mapbox.", 
-  category: "Maps",
-  image: "assets/no-diploma.png",
-  url: ""
+  image: "assets/military-bases.png",
+  url: "https://katrventura.github.io/west-ph-sea/"
 },
 
 { title: "Protest Timeline", 
@@ -165,19 +183,27 @@ url:"https://katrventura.github.io/nyc-child-services/"
   url: "https://katrventura.github.io/columbia-encampment/"
 },
 
-
-{ title: "Militarized Islands", 
-  description: "Scrollytelling piece of Chinese artificial islands in the South China Sea, using satellite images and D3/JavaScript. Featured on <a href='https://www.sealight.live/resources'>SeaLight</a>.", 
-  category: "Interactives",
-  image: "assets/military-bases.png",
-  url: "https://katrventura.github.io/west-ph-sea/"
-},
-{ title: "Cutting Orchids", 
+{ title: "FGM Orchids", 
   description: "Visual narrative illustrating types of female genital mutilations using orchids as metaphors, created in Adobe Illustrator and DataWrapper.", 
   category: "Charts",
   image: "assets/fgm-orchids.png",
   url: "https://katrventura.github.io/fgm-orchids/"
 },
+
+{ title: "CNN Debate Analysis", 
+  description: "CNN Presidential Debate word analysis using Python, BeautifulSoup, and D3.", 
+  category: "Interactives",
+  image: "assets/word-selector.gif",
+  url: "https://katrventura.github.io/cnn-debate/"
+},
+
+{ title: "No diplomas", 
+  description: "U.S. counties where a quarter of the voting-age population did not finish high school, using data from the U.S. Census Bureau and Mapbox.", 
+  category: "Maps",
+  image: "assets/no-diploma.png",
+  url: "https://github.com/katrventura/katrventura.github.io/blob/main/assets/no-diploma.png"
+},
+
 { title: "Elections Calendar", 
   description: "Balance calendar of elections in 2024 around the world, custom chart made using Adobe Illustrator.", 
   category: "Charts",
@@ -185,12 +211,25 @@ url:"https://katrventura.github.io/nyc-child-services/"
   url: "https://katrventura.github.io/elections-scraper/"
 },
 
-
 { title: "Sea Turtles", 
   description: "Data story on rising temperatures and its effects on the gender of sea turtles, charts and maps made using Python and Mapbox.", 
-  category: "Interactives",
+  category: "Charts",
   image: "assets/sea-turtles.png",
   url: "https://katrventura.github.io/climate-turtle-gender/"
+},
+
+{ title: "NYC Covid Cases", 
+  description: "NYC Covid Case Rate for the last 7 days in each borough, using data from the NYC Health Department and Mapbox.", 
+  category: "Maps",
+  image: "assets/covid-map.png",
+  url: "https://katrventura.github.io/nyc-covid-map/"
+},
+
+{ title: "NYC Child Services", 
+  description: "Multiple linear regression analysis of NYC child services data using R, and Adobe Illustrator.", 
+  category: "Maps",
+  image: "assets/foster-care.png",
+url:"https://katrventura.github.io/nyc-child-services/"
 },
 
 { title: "Campaign Funds", 
@@ -231,13 +270,16 @@ function displayProjects(filter = 'All') {
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by3">
-            <img src="${project.image}" alt="${project.title}">
+            <a href="${project.url}">
+              <img src="${project.image}" alt="${project.title}">
+            </a>
           </figure>
         </div>
         <div class="card-content">
-          <p class="title is-5">${project.title}</p>
-          <p class="subtitle is-6">${project.description}</p>
-          <a href="${project.url}" class="button is-light">View Project</a>
+          <a href="${project.url}">
+          <p class="title is-4">${project.title}</p>
+          </a>
+          <p class="subtitle is-5">${project.description}</p>
         </div>
       </div>
     `;
