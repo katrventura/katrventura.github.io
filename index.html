@@ -17,33 +17,46 @@
     }
 
     .section {
-        padding-top: 20px;
+        padding-top: 30px;
         padding-bottom: 20px;
     }
 
     .tabs {
         margin-bottom: 20px;
-    }    
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }  
+
 
     .portfolio-item {
         display: block;
-    }   
+    }  
+    
+    .portfolio-item img {
+        width: 100%;
+        height: auto;
+    }
 
     .hero-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
-        height: 100%;
+        flex-direction: column;
+        height: 600px;
     }
 
     .hero-text {
         display: flex;
         flex-direction: column;
-        justify-content: left;
-        align-items: left;
+        justify-content: center;
+        align-items: center;
         padding-top: 30px;
         line-height: 0.5;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
     }
 
 
@@ -76,33 +89,6 @@
         margin: 0;
     }
 
-    p {
-        font-size: 1.25rem;
-        padding-bottom: 10px;
-    }
-
-    @media query and (max-width: 630px) {
-        .container {
-          max-width: 90%;
-          display: flex;
-          justify-content: center;
-
-        }
-
-        .hero-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-
-    }
-       .hero {
-        max-width: 90%;
-       }
-
-    }
-
     .section .container {
         padding-top: 20px;
         padding-bottom: 20px;
@@ -110,57 +96,62 @@
         justify-content: center;
 
     }
+
+    p {
+        font-size: 1.25rem;
+        padding-bottom: 10px;
+    }
+    
+    @media query and (max-width: 630px) {
+        .container {
+          max-width: 90%;
+          display: flex;
+          justify-content: center;
+
+        }
+        .hero-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
+       .hero {
+        max-width: 90%;
+       }
+       .hero-text h1 {
+        font-size: 1rem;
+    }
+
+    }
+  
 </style>
 
 </head>
 
 <body>
 
-<!-- Introduction Section -->
-    <section class="hero is-medium is-bold is-light">
-        <!-- <div class="hero-head">
-            <!-- <nav class = "navbar">
-                <span class="navbar-burger" data-target="navbarMenuHeroA">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </span>
-                </div>
-                <div id="navbarMenuHeroA" class="navbar-menu">
-                  <div class="navbar-end">
-                    <a class="navbar-item"> Home </a>
-                    <a class="navbar-item" href="https://github.com/katrventura">GitHub</a>
-                    <a class="button is-dark is-inverted" href="./assets/Katrina_Ventura_resume.pdf" download="./assets/Katrina_Ventura_resume.pdf">Resume</a>
-                </div>
-            </nav> -->
-        </div> -->
-
-        <div class = "hero-body">
-            <div class="hero-container">   
-              <figure class="image is-128x128">
-                <img class="is-rounded" src="assets/profile-nobg.png"/>
-              </figure>
+<!-- Header -->
+<section class="hero is-medium is-bold is-light">
+          <div class="hero-container"> 
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="assets/headshot.jpg"/>
+            </figure>
               <div class = "hero-text">
-                <p class="title is-size-1">Katrina Ventura</p>
-                <p class="subtitle is-size-4">Data Visualization Developer based in NYC</p>
+                <p class="title is-size-3">KATRINA VENTURA</p>
+                <p class="subtitle is-size-5">graphics reporter based in new york</p>
             </div>
-        </div>
-    </section>
-
-<div class="hero-foot">
-<div class="tabs">
-    <div class="container">
+          </div>
+    
+<div class="tabs is-centered">  
     <ul>
-      <li class="tab"><a href="#portfolio" onclick="filterItems('All')">Projects</a></li>
-      <li class="tab"><a href="#maps" onclick="filterItems('Maps')">Maps</a></li>
-      <li class="tab"><a href="#dataviz" onclick="filterItems('Interactives')">Interactives</a></li>
-      <li class="tab"><a href="#scrapers" onclick="filterItems('Charts')">Charts</a></li>
-      <li class="tab is-active"><a href="./assets/Katrina_Ventura_resume.pdf" download="./assets/Katrina_Ventura_resume.pdf">Resume</a></li>
-
-    </ul>
-  </div>
+      <li class="tab"><a href="#portfolio" onclick="filterItems('All')">ALL</a></li>
+      <li class="tab"><a href="#maps" onclick="filterItems('Maps')">MAPS</a></li>
+      <!-- <li class="tab"><a href="#dataviz" onclick="filterItems('Interactives')">Interactives</a></li> -->
+      <li class="tab"><a href="#scrapers" onclick="filterItems('Charts')">CHARTS</a></li>
+      <li class="tab"><a href="./assets/Katrina_Ventura_resume.pdf" download="./assets/Katrina_Ventura_resume.pdf">RESUME</a></li>
+    </ul>  
 </div>
-</div>
+</section>
 
 <!-- Portfolio Section -->
 
@@ -175,24 +166,30 @@
 <script>
 
 const projects = [
-{ title: "Baltimore Banner", 
-  description: "Summer 2024 charts and analysis story featured on the Baltimore Banner, using Adobe Illustrator.", 
+{ title: "U.S. Election 2024", 
+  description: "Developed statewide maps and election charts for Maryland's statewide elections using D3, JavaScript, and HTML/CSS. Featured on <a href='https://www.thebaltimorebanner.com/politics-power/maryland-election-results-2024-GROKM4FJNRE7PER7QQEMMKBP54/'> the Baltimore Banner</a>.", 
+  category: "Charts", 
+  image: "assets/banner/election.gif",
+  url: "https://www.thebaltimorebanner.com/politics-power/maryland-election-results-2024-GROKM4FJNRE7PER7QQEMMKBP54/"
+},
+{ title: "Climate Story", 
+  description: "Charts showing analysis of NOAA weather data in Baltimore City using Adobe Illustrator. Featured on <a href='https://www.thebaltimorebanner.com/community/climate-environment/weather/2024-hot-summer-climate-EKBMOY4CFVEYDDQ6ZKSIAJF5GY/'>the Baltimore Banner</a>.", 
   category: "Charts",
-  image: "assets/banner/bb-summer3.png",
+  image: "assets/banner/summer.png",
   url: "https://www.thebaltimorebanner.com/community/climate-environment/weather/2024-hot-summer-climate-EKBMOY4CFVEYDDQ6ZKSIAJF5GY/"
 },
 
 { title: "Militarized Islands", 
   description: "Scrollytelling piece of Chinese artificial islands in the South China Sea, using satellite images and D3/JavaScript. Featured on <a href='https://www.sealight.live/resources'>SeaLight</a>.", 
-  category: "Interactives",
-  image: "assets/military-bases.png",
+  category: "Maps",
+  image: "assets/military-bases2.png",
   url: "https://katrventura.github.io/west-ph-sea/"
 },
 
 { title: "Protest Timeline", 
   description: "A scrollytelling timeline of the movement of the Gaza Solidarity Encampment inside Columbia University using Google Earth Pro satellite images, JavaScript, and D3. Featured on <a href='https://columbianewsservice.com/2024/05/03/protest/'>Columbia News Service</a>.", 
-  category: "Interactives",
-  image: "assets/columbia-encampment.png",
+  category: "Maps",
+  image: "assets/columbia.gif",
   url: "https://katrventura.github.io/columbia-encampment/"
 },
 
@@ -205,8 +202,8 @@ const projects = [
 
 { title: "CNN Debate Analysis", 
   description: "CNN Presidential Debate word analysis using Python, BeautifulSoup, and D3.", 
-  category: "Interactives",
-  image: "assets/word-selector.gif",
+  category: "Charts",
+  image: "assets/debate.gif",
   url: "https://katrventura.github.io/cnn-debate/"
 },
 
@@ -292,7 +289,7 @@ function displayProjects(filter = 'All') {
           <a href="${project.url}">
           <p class="title is-4">${project.title}</p>
           </a>
-          <p class="subtitle is-5">${project.description}</p>
+          <p class="subtitle is-6">${project.description}</p>
         </div>
       </div>
     `;
