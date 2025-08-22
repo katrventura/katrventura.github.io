@@ -64,6 +64,8 @@
         max-width: 960px;
         padding-bottom: 20px;
         font-size: 1.5rem;
+        justify-content: center;
+        align-items: center;
     }
 
     .card {
@@ -80,6 +82,15 @@
         flex-grow: 1;
         position: relative;
         padding-bottom: 1rem; /* Adjust this value as needed */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .columns.is-multiline {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 
     .card-content .button {
@@ -156,9 +167,8 @@
 <!-- Portfolio Section -->
 
 <section class="section">
-    <div class="container">
-        <div class="columns is-multiline content " id="projectContainer">
-            <!-- Projects go here -->
+    <div class="container is-centered">
+        <div class="columns is-multiline content is-centered" id="projectContainer">
         </div>
     </div>
 </section>

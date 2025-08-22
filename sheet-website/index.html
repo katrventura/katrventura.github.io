@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataviz Embeds</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        body {
+            font-family: 'Josefin sans', sans-serif;
+            /* font-family: 'Tinos', 'Georgia', serif; */
+            margin: 20px;
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+        .embed-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .embed {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .embed iframe {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 400px;
+            height: 400px;
+            flex-grow: 1;
+        }
+        .embed h3 {
+            margin-top: 0;
+            color: #333;
+            display: none;
+        }
+        .button-container {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            background-color: white;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color:#333;
+            color: white;
+        }
+        button.selected {
+            background-color: #333;
+            color: white;
+        }
+        .loading {
+            text-align: center;
+            color: #666;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            
+        }
+        #subhed {
+            text-align: center;
+            color: #555;
+
+        }
+        #tag-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .embed-container {
+                grid-template-columns: 1fr;
+            }
+            .embed iframe {
+                width: 100%;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-pic">
+    <img src="image.jpg" alt="Katrina Ventura"> 
+    </div>
+
+    <h1>Katrina Ventura</h1>
+    <p id="subhed">I design and illustrate interactive graphics and data-driven games for the Hearst Television data team to help audiences make sense of the news. Explore some of my recent projects below.</p>
+
+    <div id="loading" class="loading">Loading embeds...</div>
+    <div id="search-container" class="search-container"></div>
+    <div id="tag-container" class="button-container"></div>
+    <div id="embed-container" class="embed-container" style="display: none;"></div>
+
+
+    <script>
+        const sheetURL = 'https://docs.google.com/spreadsheets/d/1zx_qM2Vpnp24pMXzqoKWC7YGX1QAgF21LWETC-IRk74/export?format=csv&gid=0';
+
+        // const sheetURL = 'data.csv'
+        
+        function createEmbedElement(data, index) {
+            
+            const embedDiv = document.createElement('div');
+            embedDiv.className = 'embed';
+            
+            
+            const title = document.createElement('h3');
+            title.textContent = data.slug || 'No Slug';
+            
+            const iframe = document.createElement('iframe');
+            iframe.src = data.preview || '';
+            iframe.frameBorder = '0';
+            
+            const buttonContainer = document.createElement('div');
+            buttonContainer.className = 'button-container';
+            
+            
+            const copyPreviewButton = document.createElement('button');
+            copyPreviewButton.textContent = 'Read Story';
+            copyPreviewButton.addEventListener('click', () => {
+                if (data.preview) {
+                    window.open(data.link, '_blank');
+                } else {
+                    alert('No preview URL available for this item.');
+                }
+            });
+            
+
+            buttonContainer.appendChild(copyPreviewButton);
+            
+            embedDiv.appendChild(title);
+            embedDiv.appendChild(iframe);
+            embedDiv.appendChild(buttonContainer);
+            embedDiv.setAttribute('data-tag', data.tag || '');
+            
+            return embedDiv;
+        }
+        
+        function loadEmbeds() {
+            const loadingDiv = document.getElementById('loading');
+            const container = document.getElementById('embed-container');
+            
+            d3.csv(sheetURL).then(data => {
+                console.log('Raw data:', data);
+                
+                // Map the data to our expected format
+                const mappedData = data.map(d => ({
+                    slug: d['title'],
+                    preview: d['preview'],
+                    embed: d['code'],
+                    published_date: d['published_date'],
+                    headline: d['headline'],
+                    type: d['type'],
+                    link: d['link'],
+                    sessions: d['sessions'],
+                    tag: d['tag']
+                }));
+                
+                console.log('Mapped Data:', mappedData);
+                
+                // Clear existing content
+                container.innerHTML = '';
+                
+                // Create embed elements for each row
+                mappedData.forEach((rowData, index) => {
+                    const embedElement = createEmbedElement(rowData, index);
+                    container.appendChild(embedElement);
+                });
+                
+                // Hide loading and show container
+                loadingDiv.style.display = 'none';
+                container.style.display = 'grid';
+                
+            }).catch(error => {
+                console.error('Error loading data:', error);
+                loadingDiv.textContent = 'Error loading embeds. Please check the console for details.';
+            });
+        }
+        
+        // Load embeds when page loads
+        loadEmbeds();
+        createTags();
+ 
+        // Optional: Auto-refresh every 5 minutes (300000 ms)
+        setInterval(refreshEmbeds, 300000);
+    </script>
+
+    <script>
+        function createSearchBar() {
+            const searchContainer = document.getElementById('search-container');
+            searchContainer.style.textAlign = 'center';
+            searchContainer.style.marginBottom = '20px';
+
+            const searchInput = document.createElement('input');
+            searchInput.type = 'text';
+            searchInput.placeholder = 'Search a project...';
+            searchInput.style.padding = '10px';
+            searchInput.style.width = '300px';
+            searchInput.style.border = '1px solid #ccc';
+            searchInput.style.borderRadius = '4px';
+
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase();
+                const embeds = document.querySelectorAll('.embed');
+                embeds.forEach(embed => {
+                    const title = embed.querySelector('h3').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        embed.style.display = 'block';
+                    } else {
+                        embed.style.display = 'none';
+                    }
+                });
+            });
+
+            searchInput.addEventListener('focus', () => {
+            searchInput.style.border = '2px solid orange';  // Blue border when focused
+            searchInput.style.outline = 'none';  // Remove default outline
+        });
+
+        searchInput.addEventListener('blur', () => {
+            searchInput.style.border = '1px solid #ccc';  // Back to gray when not focused
+        });
+
+            searchContainer.appendChild(searchInput);
+            document.body.insertBefore(searchContainer, document.getElementById('embed-container'));
+        }
+
+        // Create the search bar when the page loads
+        createSearchBar();
+    </script>
+
+    <script>
+        function createTags() {
+            const tagContainer = document.getElementById('tag-container');
+            const tags = ['maps', 'illustrations', 'games', 'interactives', '3D builds', 'all'];
+
+            tags.forEach(tag => {
+                const button = document.createElement('button');
+                button.textContent = tag;
+                button.setAttribute('data-tag', tag);
+
+                if (tag === 'all') {
+                    button.addEventListener('click', () => {
+
+                        document.querySelectorAll('.button-container button').forEach(btn => {
+                            btn.classList.remove('selected');
+                        });
+                        button.classList.add('selected');
+
+                        const embeds = document.querySelectorAll('.embed');
+                        embeds.forEach(embed => {
+                            embed.style.display = 'block';
+                        });
+                    });
+                } else {
+                    button.addEventListener('click', () => {
+
+                        document.querySelectorAll('.button-container button').forEach(btn => {
+                            btn.classList.remove('selected');
+                        });
+                        button.classList.add('selected');
+
+
+                        filterByTag(tag);
+                    });
+                }
+
+                tagContainer.appendChild(button);
+
+            });
+
+            document.querySelector('button[data-tag="all"]').classList.add('selected');
+
+        }
+
+        function filterByTag(tag) {
+            const embeds = document.querySelectorAll('.embed');
+            embeds.forEach(embed => {
+                const embedTag = embed.getAttribute('data-tag');
+                if (embedTag && embedTag.toLowerCase().includes(tag.toLowerCase())) {
+                    embed.style.display = 'block';
+                } else {
+                    embed.style.display = 'none';
+                }
+            });
+        }
+
+        // Create tags when the page loads
+        createTags();
+       
+    </script>
+
+
+
+</body>
+</html>

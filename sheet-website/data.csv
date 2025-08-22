@@ -1,0 +1,22 @@
+Slug,Date,Author,Preview,Code
+Budget cuts target foreign aid and local media funding,7/18,KV,https://hearsttelevisiondatajournalism.htvapps.com/budget-cuts/treemap3/index.html,"<iframe 
+        title=""budget cuts"" 
+        src=""https://hearsttelevisiondatajournalism.htvapps.com/budget-cuts/treemap3/index.html"" 
+        scrolling=""no"" 
+        frameborder=""0"" 
+        style=""width: 0; min-width: 100% !important; border: none;"" 
+        height=""1150""
+        data-external=""1"">
+    </iframe>
+<script type=""text/javascript"">
+    window.addEventListener('message', function(event) {
+        if (event.data && event.data.type === 'model-viewer-height') {
+            const iframes = document.querySelectorAll('iframe');
+            for (let iframe of iframes) {
+                if (iframe.contentWindow === event.source) {
+                    iframe.style.height = event.data.height + 'px';
+                }
+            }
+        }
+    });
+</script>"
